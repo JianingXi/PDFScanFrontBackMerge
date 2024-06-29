@@ -31,23 +31,23 @@ def merge_pdfs(folder_path, output_path):
 
     print(f"PDF文件已成功合并为：{output_path}")
 
-# # 拆分1
-# input_pdf_1 = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\Scan1111.pdf'
-# output1_folder = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\正面'
-# split_pdf(input_pdf_1, output1_folder)
-#
-# # 拆分2
-# input_pdf_2 = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\Scan2222.pdf'
-# output2_folder = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\反面'
-# split_pdf(input_pdf_2, output2_folder)
-#
-# # 反转
-# rename_files_in_reverse_order(output2_folder)
+# 拆分1
+input_pdf_1 = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\Scan1111.pdf'
+output1_folder = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\正面'
+split_pdf(input_pdf_1, output1_folder)
+
+# 拆分2
+input_pdf_2 = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\Scan2222.pdf'
+output2_folder = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\反面'
+split_pdf(input_pdf_2, output2_folder)
+
+# 反转
+rename_files_in_reverse_order(output2_folder)
 
 # 文件合并
 destination_folder = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\MergeDir'
-# move_files_to_new_folder(output1_folder, output2_folder, destination_folder)
+move_files_to_new_folder(output1_folder, output2_folder, destination_folder)
 
-# 示例使用
+# 输出
 output_path = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\合并PDF.pdf'
 merge_pdfs(destination_folder, output_path)
