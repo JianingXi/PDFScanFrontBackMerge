@@ -1,4 +1,7 @@
+
 import os
+import shutil
+
 from pypdf import PdfReader, PdfWriter
 from PDFSpliter import split_pdf, rename_files_in_reverse_order, move_files_to_new_folder
 
@@ -31,23 +34,51 @@ def merge_pdfs(folder_path, output_path):
 
     print(f"PDF文件已成功合并为：{output_path}")
 
+
+
+# 删除多余文件
+def delete_files_and_folders(files, folders):
+    for file in files:
+        if os.path.isfile(file):
+            try:
+                os.remove(file)
+                print(f"文件已删除: {file}")
+            except Exception as e:
+                print(f"删除文件时出错: {file}, 错误信息: {e}")
+        else:
+            print(f"文件未找到: {file}")
+
+    for folder in folders:
+        if os.path.isdir(folder):
+            try:
+                shutil.rmtree(folder)
+                print(f"文件夹已删除: {folder}")
+            except Exception as e:
+                print(f"删除文件夹时出错: {folder}, 错误信息: {e}")
+        else:
+            print(f"文件夹未找到: {folder}")
+
 # 拆分1
-input_pdf_1 = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\Scan1111.pdf'
-output1_folder = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\正面'
+input_pdf_1 = r'C:\Users\xijia\Documents\Scan.pdf'
+output1_folder = r'C:\Users\xijia\Documents\Temp01Front'
 split_pdf(input_pdf_1, output1_folder)
 
 # 拆分2
-input_pdf_2 = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\Scan2222.pdf'
-output2_folder = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\反面'
+input_pdf_2 = r'C:\Users\xijia\Documents\Scan2.pdf'
+output2_folder = r'C:\Users\xijia\Documents\Temp02Back'
 split_pdf(input_pdf_2, output2_folder)
 
 # 反转
 rename_files_in_reverse_order(output2_folder)
 
 # 文件合并
-destination_folder = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\MergeDir'
+destination_folder = r'C:\Users\xijia\Documents\Temp03MergeDir'
 move_files_to_new_folder(output1_folder, output2_folder, destination_folder)
 
 # 输出
-output_path = r'C:\Users\DELL\Desktop\研究生项目A02_校内获批与打印\扫描申请书\合并PDF.pdf'
+output_path = r'C:\Users\xijia\Documents\合并PDF.pdf'
 merge_pdfs(destination_folder, output_path)
+
+
+# 删除文件和文件夹
+delete_files_and_folders([input_pdf_1, input_pdf_2], [output1_folder, output2_folder, destination_folder])
