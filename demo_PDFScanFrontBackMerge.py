@@ -76,7 +76,7 @@ destination_folder = r'C:\Users\xijia\Documents\Temp03MergeDir'
 move_files_to_new_folder(output1_folder, output2_folder, destination_folder)
 
 # 输出
-output_path = r'C:\Users\xijia\Documents\合并PDF.pdf'
+output_path = r'C:\Users\xijia\Documents\合并PDF02.pdf'
 merge_pdfs(destination_folder, output_path)
 
 
