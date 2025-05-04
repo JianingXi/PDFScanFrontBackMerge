@@ -59,7 +59,7 @@ def delete_files_and_folders(files, folders):
             print(f"文件夹未找到: {folder}")
 
 # 拆分1
-input_pdf_1 = r'C:\Users\xijia\Documents\Scan.pdf'
+input_pdf_1 = r'C:\Users\xijia\Documents\Scan1.pdf'
 output1_folder = r'C:\Users\xijia\Documents\Temp01Front'
 split_pdf(input_pdf_1, output1_folder)
 
@@ -76,7 +76,7 @@ destination_folder = r'C:\Users\xijia\Documents\Temp03MergeDir'
 move_files_to_new_folder(output1_folder, output2_folder, destination_folder)
 
 # 输出
-output_path = r'C:\Users\xijia\Documents\合并PDF02.pdf'
+output_path = r'C:\Users\xijia\Documents\合并PDF.pdf'
 merge_pdfs(destination_folder, output_path)
 
 
