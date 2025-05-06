@@ -36,8 +36,8 @@ def split_pdf_by_pages(pdf_path, start_pages, output_dir):
 
 
 # 使用示例
-pdf_path = r"C:\Users\xijia\Desktop\信号与系统\信号与系统-第01章-生物医学中的信号-课件.pdf"  # 修改为你的PDF路径
-start_pages = [1, 7, 16, 56, 69]  # 首页页码
-output_dir = r"C:\Users\xijia\Desktop\信号与系统\File"  # 输出文件夹
+pdf_path = r"C:\Users\xijia\Desktop\信号与系统\FinalDPF_信号与系统-最终MathType01-18.pdf"  # 修改为你的PDF路径
+start_pages = [1, 8, 20, 38, 63, 84, 104, 120, 133]  # 首页页码
+output_dir = r"C:\Users\xijia\Desktop\信号与系统\FilePDF"  # 输出文件夹
 
 split_pdf_by_pages(pdf_path, start_pages, output_dir)
